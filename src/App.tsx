@@ -16,11 +16,11 @@ export default function App() {
   function deleteGoalHandler(id:number) {
     setGoals(prevGoals => prevGoals.filter((goal)=> goal.id != id))
   }
-  function addGoalHandler() {
+  function addGoalHandler(goal:string, summary:string) {
     const newGoal:CourseGoalData = {
       id:Math.random(),
-      title:"Learn React + TS",
-      description:"Learn it in depth!"
+      title: goal,
+      description:summary
     };
 
     setGoals(prevgoals=>{
@@ -33,7 +33,7 @@ export default function App() {
       <Header image={{src:goalImage,alt:'A list of goals'}}>
         <h1>your Course Goals</h1>
       </Header>
-      <NewGoal/>
+      <NewGoal onAddGoal={addGoalHandler}/>
       <CourseGoalList goals={goals} onDelete={deleteGoalHandler}/>
       
     </main>
