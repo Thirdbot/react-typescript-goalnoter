@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import goalImage from "./assets/goals.jpg";
 import { useState } from "react";
 
-type CourseGoalData = {
+export type CourseGoalData = {
   title:string;
   description:string;
   id:number;

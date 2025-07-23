@@ -1,4 +1,4 @@
-import { useState, type FC, type PropsWithChildren, type ReactNode } from "react";
+import { useState, type FC, type PropsWithChildren} from "react";
 // interface CourseGoalProps{
 //     title: string;
 //     description: string;

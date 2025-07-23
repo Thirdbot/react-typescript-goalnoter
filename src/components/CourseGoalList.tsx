@@ -1,9 +1,10 @@
 import CourseGoal from "./CourseGoal"
+import { type CourseGoalData } from "../App"
+
 type CourseGoalList = {
-  goals:{title:string;
-  description:string;
-  id:number;}[];
+  goals:CourseGoalData[];
 }
+
 export default function CourseGoalList({goals}:CourseGoalList) {
     return (
         <ul>
