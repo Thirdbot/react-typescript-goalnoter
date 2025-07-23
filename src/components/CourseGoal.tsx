@@ -13,9 +13,8 @@ interface CourseGoalData{
 }
 type CourseGoalProps = PropsWithChildren<CourseGoalData>;
 
-const CourseGoal:FC<CourseGoalProps> = ({title,id,children,onDelete}) => {
+const CourseGoal:FC<CourseGoalProps> = ({title,id,description,children,onDelete}) => {
     
-    const description = "Learn it from ground up.";
     return (
         <section>
             <div>
