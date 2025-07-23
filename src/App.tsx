@@ -12,6 +12,9 @@ export type CourseGoalData = {
 export default function App() {
   const [goals,setGoals] = useState<Array<CourseGoalData>>([]);
 
+  function deleteGoalHandler(id:number) {
+    setGoals(prevGoals => prevGoals.filter((goal)=> goal.id != id))
+  }
   function addGoalHandler() {
     const newGoal:CourseGoalData = {
       id:Math.random(),
@@ -30,7 +33,7 @@ export default function App() {
         <h1>your Course Goals</h1>
       </Header>
       <button onClick={addGoalHandler}>Add Goal</button>
-      <CourseGoalList goals={goals}/>
+      <CourseGoalList goals={goals} onDelete={deleteGoalHandler}/>
       
     </main>
   )

@@ -1,4 +1,4 @@
-import { useState, type FC, type PropsWithChildren} from "react";
+import { type FC, type PropsWithChildren} from "react";
 // interface CourseGoalProps{
 //     title: string;
 //     description: string;
@@ -6,22 +6,15 @@ import { useState, type FC, type PropsWithChildren} from "react";
 // }
 
 interface CourseGoalData{
+    id: number;
     title: string;
     description: string;
+    onDelete: (id:number) => void;
 }
 type CourseGoalProps = PropsWithChildren<CourseGoalData>;
 
-const addup:(number1:number, number2:number) => number = (number1, number2) => {
-    return number1 + number2;
-}
-
-const CourseGoal:FC<CourseGoalProps> = ({title,children}) => {
-    const [count,setcount] = useState(1);
+const CourseGoal:FC<CourseGoalProps> = ({title,id,children,onDelete}) => {
     
-    function increateHandler() {
-        setcount(prevCount => prevCount + 1);
-        return addup(count, 1);
-    }   
     const description = "Learn it from ground up.";
     return (
         <section>
@@ -30,7 +23,7 @@ const CourseGoal:FC<CourseGoalProps> = ({title,children}) => {
                 <p>{description}</p>
             </div>
             {children}
-            <button onClick={increateHandler}>Increment {count}</button>
+            <button onClick={()=>{onDelete(id)}}>Delete Goal</button>
             
         </section>
     )
