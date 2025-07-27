@@ -15,7 +15,7 @@ export default function CourseGoalList({goals,onDelete}:CourseGoalList) {
     return <InfoBox mode='hint'>You have no goals yet!</InfoBox>  
    }
    if (goals.length >= 4){
-     warningbox = <InfoBox mode='warning'>You have more than 3 goals, you should focus on fewer goals!</InfoBox>
+     warningbox = <InfoBox mode='warning' severity="high">You have more than 3 goals, you should focus on fewer goals!</InfoBox>
    }
     return (
       <>
